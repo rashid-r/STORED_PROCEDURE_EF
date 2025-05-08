@@ -15,12 +15,13 @@ namespace STORED_PROCEDURE_EF.Controllers
         {
             _iEmployeeService = employeeService;
         }
+
+
         [HttpPost("Add Employee")]
         public async Task<IActionResult> AddEmployee([FromForm] UpdateEmpDto empDto)
         {
             return Ok(await _iEmployeeService.AddEmployee(empDto));
         }
-
         [HttpGet]
         public async Task<IActionResult> GetAllEmployee()
         { 
@@ -32,7 +33,7 @@ namespace STORED_PROCEDURE_EF.Controllers
         {
             return Ok(await _iEmployeeService.GetById(id));
         }
-        [HttpPost("Update")]
+        [HttpPut("Update")]
         public async Task<IActionResult> UpdateEmp([FromForm]UpdateEmpDto empDto,int id)
         {
             return Ok(await _iEmployeeService.UpdateEmployee(empDto,id));

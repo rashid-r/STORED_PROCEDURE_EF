@@ -5,7 +5,6 @@ namespace STORED_PROCEDURE_EF.Services
     public class EmployeeService : iEmployeeService
     {
         private readonly AppDbContext _dbContext;
-        private readonly IMapper _mapper;
 
         public EmployeeService(AppDbContext dbContext)
         {

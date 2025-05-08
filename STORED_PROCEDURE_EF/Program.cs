@@ -3,15 +3,14 @@ global using Microsoft.EntityFrameworkCore;
 global using STORED_PROCEDURE_EF.Services;
 global using STORED_PROCEDURE_EF.Model;
 global using STORED_PROCEDURE_EF.Dto;
-global using AutoMapper;
-using STORED_PROCEDURE_EF.Auto_Mapper;
+
+
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddScoped<iEmployeeService, EmployeeService>();
-builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("defaultconnection")));
 
